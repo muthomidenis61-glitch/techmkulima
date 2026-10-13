@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#123c2f">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/mkulima-icon.svg" type="image/svg+xml">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="MKULIMA">
+<meta name="description" content="MKULIMA by Avenqor Holdings Ltd — Kenya-focused crop and livestock guidance, farm planning, records, reminders and practical tools for stronger farm businesses.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://mkulim.netlify.app/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MKULIMA">
+<meta property="og:title" content="MKULIMA — Smart Farming for Kenya">
+<meta property="og:description" content="Practical crop and livestock guidance, farm planning, records and tools for Kenyan farmers. Built by Avenqor Holdings Ltd.">
+<meta property="og:url" content="https://mkulim.netlify.app/">
+<meta property="og:image" content="https://mkulim.netlify.app/mkulima-social.svg">
+<meta property="og:image:alt" content="MKULIMA smart farming platform by Avenqor Holdings Ltd">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MKULIMA — Smart Farming for Kenya">
+<meta name="twitter:description" content="Crop and livestock guidance, farm planning, records and practical tools for Kenyan farmers.">
+<meta name="twitter:image" content="https://mkulim.netlify.app/mkulima-social.svg">
+<title>MKULIMA | Smart Farming for Kenya — Avenqor Holdings Ltd</title>
+<style>
+:root{--green:#123c2f;--green2:#1e6248;--lime:#c9e86b;--cream:#f7f7f0;--ink:#1c2b25;--muted:#68766f;--line:#e2e9e3;--white:#fff;--orange:#e6a54a;--red:#b94c43;--shadow:0 10px 28px rgba(18,60,47,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font:15px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.shell{max-width:1120px;margin:auto;min-height:100vh}.topbar{position:sticky;top:0;z-index:20;background:rgba(247,247,240,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:12px 18px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;gap:10px;align-items:center;border:0;background:none;text-align:left;color:inherit;padding:0}.mark{width:42px;height:42px;border-radius:14px;background:var(--green);color:var(--lime);display:grid;place-items:center;font-weight:900;font-size:21px;letter-spacing:-2px}.brand strong{display:block;font-size:18px;letter-spacing:1.4px;line-height:1.1}.brand small{color:var(--muted);font-size:10px;letter-spacing:.2px}.top-actions{display:flex;gap:8px;align-items:center}.pill{border-radius:999px;padding:8px 12px;border:1px solid var(--line);background:white;font-weight:700;font-size:12px}.menu-btn{border:0;background:var(--green);color:white;border-radius:12px;padding:10px 13px;font-weight:700}.layout{display:grid;grid-template-columns:225px minmax(0,1fr);gap:24px;padding:22px}.sidebar{align-self:start;position:sticky;top:82px;background:white;border:1px solid var(--line);border-radius:20px;padding:12px;box-shadow:var(--shadow)}.navbtn{width:100%;display:flex;align-items:center;gap:12px;padding:12px;border:0;background:transparent;border-radius:12px;text-align:left;color:#53645b;font-weight:650;margin:2px 0}.navbtn.active,.navbtn:hover{background:#edf5ed;color:var(--green)}.navbtn .ico{font-size:18px;width:24px;text-align:center}.navlabel{font-size:10px;text-transform:uppercase;letter-spacing:1.4px;color:#89958d;padding:15px 12px 5px}.side-foot{margin:16px 4px 4px;padding:13px;border-radius:14px;background:#f4f8ee;font-size:12px;color:var(--muted)}main{min-width:0}.view{display:none}.view.active{display:block}.welcome{background:var(--green);color:white;border-radius:24px;padding:26px;position:relative;overflow:hidden;box-shadow:var(--shadow)}.welcome:after{content:"";position:absolute;width:230px;height:230px;border:35px solid rgba(201,232,107,.12);border-radius:50%;right:-55px;top:-90px}.eyebrow{color:var(--lime);font-size:11px;letter-spacing:1.6px;text-transform:uppercase;font-weight:800}.welcome h1{font-size:clamp(27px,4vw,40px);line-height:1.12;letter-spacing:-1.3px;margin:10px 0}.welcome p{color:#d6e6db;max-width:560px;margin:0 0 18px}.btn{border:0;border-radius:12px;padding:12px 16px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;gap:8px}.btn.primary{background:var(--lime);color:var(--green)}.btn.dark{background:var(--green);color:white}.btn.light{background:white;border:1px solid var(--line);color:var(--green)}.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,.35);color:white}.btn.small{padding:8px 11px;font-size:12px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:25px 0 13px}.section-head h2{font-size:20px;margin:0;letter-spacing:-.5px}.section-head p{margin:3px 0 0;color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.card{background:white;border:1px solid var(--line);border-radius:18px;padding:17px;box-shadow:0 4px 14px rgba(18,60,47,.025);min-width:0}.feature{transition:transform .15s,border .15s;cursor:pointer}.feature:hover{transform:translateY(-2px);border-color:#b7d3bb}.feature .emoji{width:42px;height:42px;border-radius:13px;background:#eff6e9;display:grid;place-items:center;font-size:22px;margin-bottom:12px}.feature h3{font-size:15px;margin:0 0 5px}.feature p{font-size:12px;color:var(--muted);margin:0 0 12px}.text-link{color:var(--green2);font-weight:800;font-size:12px;border:0;background:none;padding:0}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:14px}.stat{padding:15px}.stat span{display:block;font-size:12px;color:var(--muted)}.stat strong{display:block;font-size:22px;margin:4px 0}.stat small{font-size:11px;color:var(--green2)}.split{display:grid;grid-template-columns:1.15fr .85fr;gap:14px}.list{display:grid;gap:10px}.list-row{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid #edf0ec}.list-row:last-child{border:0}.list-row .round{width:38px;height:38px;flex:0 0 38px;border-radius:12px;background:#f0f5ec;display:grid;place-items:center;font-size:18px}.list-row div:nth-child(2){flex:1;min-width:0}.list-row strong{font-size:13px;display:block}.list-row small{color:var(--muted);font-size:11px}.tag{font-size:10px;border-radius:99px;background:#edf5ed;color:var(--green2);padding:5px 8px;font-weight:800;white-space:nowrap}.muted{color:var(--muted)}.page-title{margin:2px 0 5px;font-size:30px;letter-spacing:-1px}.page-intro{color:var(--muted);margin:0 0 20px;max-width:700px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.field{display:grid;gap:6px;margin-bottom:12px}.field label{font-size:12px;font-weight:800;color:#4c5d53}.field input,.field select,.field textarea{width:100%;padding:12px 13px;border:1px solid #dbe4dc;border-radius:12px;background:#fff;outline:none;color:var(--ink)}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--green2);box-shadow:0 0 0 3px #e3f0e3}.field textarea{min-height:100px;resize:vertical}.full{grid-column:1/-1}.result{background:#eff6e9;border:1px solid #d9e9d3;border-radius:14px;padding:15px;margin-top:12px}.result strong{font-size:22px;color:var(--green)}.notice{padding:13px 14px;border-radius:13px;background:#fff5e4;border:1px solid #f3dfba;color:#765222;font-size:12px;margin:13px 0}.notice.danger{background:#fff0ee;border-color:#f0cfcb;color:#873d37}.chatbox{display:flex;flex-direction:column;gap:12px;min-height:340px}.messages{display:flex;flex-direction:column;gap:10px;max-height:440px;overflow:auto;padding:4px}.bubble{max-width:88%;padding:12px 14px;border-radius:16px;font-size:13px;white-space:pre-wrap}.bubble.bot{align-self:flex-start;background:#eff5ec;border-bottom-left-radius:4px}.bubble.user{align-self:flex-end;background:var(--green);color:white;border-bottom-right-radius:4px}.chat-form{display:flex;gap:8px}.chat-form input{min-width:0;flex:1;padding:12px;border-radius:12px;border:1px solid var(--line)}.pricing{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.price-card{position:relative}.price-card.popular{border:2px solid var(--green2)}.price-card h3{margin:4px 0}.price{font-size:30px;font-weight:900;letter-spacing:-1px;margin:14px 0 0}.price small{font-size:12px;color:var(--muted);font-weight:600;letter-spacing:0}.price-card ul{padding-left:18px;color:var(--muted);font-size:13px;min-height:120px}.price-card li{margin:8px 0}.badge{background:var(--lime);color:var(--green);font-size:10px;padding:5px 8px;border-radius:99px;font-weight:900;display:inline-block}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line)}th{font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted)}.empty{padding:25px;text-align:center;color:var(--muted);font-size:13px}.bottomnav{display:none}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#182d23;color:white;padding:12px 17px;border-radius:12px;box-shadow:var(--shadow);z-index:100;display:none;max-width:90%;font-size:13px}.footer{padding:30px 20px 100px;text-align:center;color:#839087;font-size:11px}.footer strong{color:var(--green)}.hidden{display:none!important}
+@media(max-width:800px){.layout{display:block;padding:15px}.sidebar{display:none}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.split{grid-template-columns:1fr}.pricing{grid-template-columns:1fr}.price-card ul{min-height:0}.topbar{padding:10px 14px}.top-actions .pill{display:none}.bottomnav{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:30;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-top:1px solid var(--line);justify-content:space-around;padding:7px 3px calc(7px + env(safe-area-inset-bottom))}.bottomnav button{border:0;background:none;display:grid;justify-items:center;gap:2px;font-size:10px;color:#68766f;padding:5px 7px;border-radius:10px}.bottomnav button.active{color:var(--green);background:#edf5ed;font-weight:800}.bottomnav span{font-size:18px}.footer{padding-bottom:100px}.welcome{padding:22px}.form-grid{grid-template-columns:1fr}.full{grid-column:auto}}
+@media(max-width:380px){.grid{grid-template-columns:1fr}.brand strong{font-size:16px}.welcome h1{font-size:28px}.stats{gap:8px}}
+
+/* Mobile accessibility and low-cost Android usability */
+:focus-visible{outline:3px solid #8eaf3e;outline-offset:3px}
+button,input,select,textarea{touch-action:manipulation}
+@media(max-width:800px){.navbtn,.bottomnav button,.btn{min-height:44px}.field input,.field select,.field textarea,.chat-form input{font-size:16px} .topbar{backdrop-filter:none} .bottomnav{backdrop-filter:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="topbar">
+  <button class="brand" onclick="navigate('home')" aria-label="MKULIMA home">
+    <span class="mark">M.</span><span><strong>MKULIMA<span style="color:#8eaf3e">™</span></strong><small>BY AVENQOR HOLDINGS LTD</small></span>
+  </button>
+  <div class="top-actions"><span class="pill" id="planPill">FREE PLAN</span><button class="menu-btn" onclick="navigate('pricing')">Upgrade ↗</button></div>
+</header>
+<div class="layout">
+<aside class="sidebar">
+  <div class="navlabel">Workspace</div>
+  <button class="navbtn active" data-view="home" onclick="navigate('home')"><span class="ico">⌂</span>Overview</button>
+  <button class="navbtn" data-view="assistant" onclick="navigate('assistant')"><span class="ico">✳</span>AI Farm Assistant</button>
+  <button class="navbtn" data-view="doctor" onclick="navigate('doctor')"><span class="ico">🌿</span>Crop & Animal Doctor</button>
+  <button class="navbtn" data-view="calculator" onclick="navigate('calculator')"><span class="ico">▦</span>Farm Calculator</button>
+  <button class="navbtn" data-view="records" onclick="navigate('records')"><span class="ico">▤</span>FarmBook & Records</button>
+  <button class="navbtn" data-view="reminders" onclick="navigate('reminders')"><span class="ico">◷</span>Reminders</button>
+  <button class="navbtn" data-view="market" onclick="navigate('market')"><span class="ico">🛒</span>Marketplace</button>
+  <div class="navlabel">Account</div>
+  <button class="navbtn" data-view="pricing" onclick="navigate('pricing')"><span class="ico">♧</span>Plans & Subscriptions</button>
+  <button class="navbtn" data-view="profile" onclick="navigate('profile')"><span class="ico">◎</span>My Profile</button>
+  <button class="navbtn" onclick="location.href='/security.html'"><span class="ico">🛡</span>Security & Privacy</button>
+  <div class="side-foot"><strong>Built for African agriculture.</strong><br>MKULIMA is a product concept by Avenqor Holdings Ltd.</div>
+</aside>
+<main>
+<section class="view active" id="view-home">
+  <div class="welcome"><div class="eyebrow">Your farm. One smart platform.</div><h1>Grow smarter.<br>Farm with confidence.</h1><p>Bring your farming questions, records, costs and plans together in one place with MKULIMA.</p><button class="btn primary" onclick="navigate('assistant')">Ask MKULIMA <span>→</span></button> <button class="btn ghost" onclick="navigate('records')">Open FarmBook</button></div>
+  <div class="stats">
+    <div class="card stat"><span>Farm records</span><strong id="statRecords">0</strong><small>Saved on this device</small></div>
+    <div class="card stat"><span>Reminders</span><strong id="statReminders">0</strong><small>Upcoming tasks</small></div>
+    <div class="card stat"><span>Subscription</span><strong id="statPlan" style="font-size:18px">Free</strong><small id="statPlanDesc">Starter access</small></div>
+    <div class="card stat"><span>Farm tools</span><strong>14+</strong><small>In the MKULIMA vision</small></div>
+  </div>
+  <div class="section-head"><div><h2>Your farming toolkit</h2><p>Choose a tool to get started.</p></div></div>
+  <div class="grid">
+    <div class="card feature" onclick="navigate('assistant')"><div class="emoji">✳️</div><h3>AI Farm Assistant</h3><p>Ask questions about crops, animals, feed, soil and farm management.</p><button class="text-link">Ask a question →</button></div>
+    <div class="card feature" onclick="navigate('doctor')"><div class="emoji">🌱</div><h3>Crop & Animal Doctor</h3><p>Describe symptoms or prepare a photo-based assessment.</p><button class="text-link">Start assessment →</button></div>
+    <div class="card feature" onclick="navigate('calculator')"><div class="emoji">🧮</div><h3>Farm Calculator</h3><p>Estimate milk income, feed costs and simple farm profit.</p><button class="text-link">Calculate →</button></div>
+    <div class="card feature" onclick="navigate('records')"><div class="emoji">📒</div><h3>FarmBook</h3><p>Keep a simple log of harvests, animals, spending and farm events.</p><button class="text-link">Add a record →</button></div>
+    <div class="card feature" onclick="location.href='/farm-inventory.html'"><div class="emoji">📦</div><h3>Farm Inventory</h3><p>Track feed, seeds, fertiliser, veterinary supplies and produce with low-stock alerts.</p><button class="text-link">Manage stock →</button></div>
+    <div class="card feature" onclick="location.href='/veterinary.html'"><div class="emoji">🐄</div><h3>Veterinary Intelligence</h3><p>Prepare an animal health case report and find Kenyan veterinary guidance and urgent warning signs.</p><button class="text-link">Open veterinary support →</button></div>
+    <div class="card feature" onclick="navigate('reminders')"><div class="emoji">🔔</div><h3>Smart Reminders</h3><p>Plan important farm activities and follow-up tasks.</p><button class="text-link">Plan a task →</button></div>
+    <div class="card feature" onclick="location.href='/crop-calendar.html'"><div class="emoji">🗓️</div><h3>Kenya Crop Calendar</h3><p>Build a planting-date checklist for common Kenyan crops, tick off tasks and export your plan.</p><button class="text-link">Plan the season →</button></div>
+    <div class="card feature" onclick="navigate('market')"><div class="emoji">🛒</div><h3>Farm Marketplace</h3><p>Explore the planned hub for farm services, suppliers and buyers.</p><button class="text-link">Explore →</button></div>
+  </div>
+  <div class="section-head"><div><h2>Quick start</h2><p>Build your farm profile to make future advice more relevant.</p></div></div>
+  <div class="card"><div class="list-row"><div class="round">👩🏽‍🌾</div><div><strong>Tell MKULIMA about your farm</strong><small>Set your county, farm type and main activities.</small></div><button class="btn dark small" onclick="navigate('profile')">Set up</button></div></div>
+</section>
+
+<section class="view" id="view-assistant">
+  <h1 class="page-title">AI Farm Assistant</h1><p class="page-intro">Ask practical questions about Kenyan crops, livestock, feeding, soil, farm records and farm business. Signed-in farmers with active access can receive AI-generated guidance; if secure service setup is incomplete, MKULIMA will show an error rather than pretend it answered with AI.</p>
+  <div class="card chatbox">
+    <div class="messages" id="messages"><div class="bubble bot">Habari, mkulima! 🌱 I’m MKULIMA. What are you working on today? Ask about crops, animals, feed costs, farm planning or farm business.</div></div>
+    <div style="display:flex;flex-wrap:wrap;gap:7px"><button class="btn light small" onclick="quickAsk('My maize leaves are turning yellow. What should I check?')">🌽 Yellow maize leaves</button><button class="btn light small" onclick="quickAsk('Help me calculate dairy feed costs.')">🐄 Dairy feed costs</button><button class="btn light small" onclick="quickAsk('How do I start keeping farm records?')">📒 Farm records</button></div>
+    <div class="form-grid" style="margin-top:8px"><div class="field"><label for="voiceLanguageAssistant">Voice language / Lugha ya sauti</label><select id="voiceLanguageAssistant"><option value="sw-KE">Kiswahili (Kenya)</option><option value="en-KE" selected>English (Kenya)</option><option value="device">Use phone language</option></select></div><div class="field" style="align-content:end"><button class="btn light" type="button" id="assistantVoiceBtn" aria-describedby="assistantVoiceStatus">🎙️ Ask by voice / Uliza kwa sauti</button><span id="assistantVoiceStatus" class="muted" role="status" aria-live="polite" style="font-size:12px">Select a language first. / Chagua lugha kwanza.</span></div></div><form class="chat-form" id="chatForm" onsubmit="event.preventDefault(); event.stopPropagation(); navigate('assistant'); ask(document.getElementById('chatInput').value); return false;"><input id="chatInput" placeholder="Ask MKULIMA / Uliza MKULIMA…" required><button class="btn dark" type="button" id="sendQuestionBtn" onclick="window.mkulimaSendQuestion();">Send / Tuma ↑</button></form><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><button class="btn light small" type="button" id="speakLastAnswer">🔊 Read latest answer / Soma jibu kwa sauti</button><button class="btn light small" type="button" id="stopAnswerSpeech">■ Stop voice / Simamisha sauti</button></div><p id="answerSpeechStatus" class="muted" role="status" aria-live="polite" style="font-size:12px;margin-top:6px">Choose Kiswahili or English above to set the spoken answer language. / Chagua lugha hapo juu.</p>
+  </div>
+  <div class="notice">Safety first: AI guidance is an initial assessment, not a confirmed diagnosis or prescription. Verify locally before applying chemicals or treating animals. Serious animal illness, suspected contagious disease, poisoning, sudden deaths or rapidly spreading crop damage require qualified local assistance.</div>
+</section>
+
+<section class="view" id="view-doctor">
+  <h1 class="page-title">Crop & Animal AI Assessment</h1><p class="page-intro">Describe the problem and optionally attach a clear crop, leaf, pest, animal or affected-body-part photo. When the secure AI service and your account access are active, MKULIMA sends the text and photo for AI-assisted first guidance. A photo alone cannot confirm a diagnosis.</p>
+  <div class="notice" style="margin-bottom:16px"><strong>Kenyan Farm Resource Centre / Kituo cha Taarifa za Kilimo</strong> Find trusted Kenyan links for crop production, livestock, veterinary services, soil testing, weather, markets and farmer learning. <a href="/farm-resource-centre.html" style="color:var(--green2);font-weight:800">Open Farm Resource Centre →</a></div>
+  <div class="notice" style="margin-bottom:16px"><strong>Voice Assistant / Msaidizi wa Sauti</strong> Speak in English or Kiswahili and listen to basic guidance aloud. <a href="/voice-assistant.html" style="color:var(--green2);font-weight:800">Open Voice Assistant →</a> · <a href="/farm-visual-guide.html" style="color:var(--green2);font-weight:800">Compare crop/chicken/cow signs →</a><br><small>Voice input uses supported browser speech recognition or your phone keyboard microphone. AI photo guidance requires sign-in, active access and working server configuration.</small></div><div class="notice" style="margin-bottom:16px"><strong>Farm Business Calculator / Kikokotoo cha Biashara ya Shamba</strong> Estimate sales revenue, entered costs, profit/loss and break-even selling price for crops, milk, eggs or livestock. <a href="/farm-business-calculator.html" style="color:var(--green2);font-weight:800">Open Farm Business Calculator →</a><br><small>Calculations run on your phone; figures are estimates, not live market prices or guaranteed profit.</small></div><div class="notice" style="margin-bottom:16px"><strong>Farm Planner & Records / Mpangilio wa Shamba</strong> Record crop and livestock activities, plan tasks, track income and expenses, and export a backup on this phone. <a href="/farm-planner.html" style="color:var(--green2);font-weight:800">Open Farm Planner →</a><br><small>Records remain on this device; cloud sync and notifications are not included.</small></div>
+  <div class="notice" style="margin-bottom:16px"><strong>Preparing for a veterinary visit?</strong> Create a structured animal history, mark emergency warning signs, record clinician examination findings, and print or export a case report. <a href="/veterinary-examination.html" style="color:var(--green2);font-weight:800">Open Veterinary Examination Record →</a><br><small>This is a record template, not an AI diagnosis or substitute for a qualified veterinarian.</small></div>
+  <div class="card">
+    <form id="doctorForm">
+      <div class="form-grid">
+        <div class="field"><label for="subject">What needs attention?</label><select id="subject"><option>Crop</option><option>Dairy cow</option><option>Calf</option><option>Poultry</option><option>Pig</option><option>Goat or sheep</option><option>Other animal</option></select></div>
+        <div class="field"><label for="cropType">Crop / animal / breed</label><input id="cropType" placeholder="e.g. maize, dairy cow, layers"></div>
+        <div class="field full"><label for="symptoms">Describe the symptoms or problem</label><textarea id="symptoms" required placeholder="When did it start? What changed? How many plants/animals are affected?"></textarea><div style="display:grid;grid-template-columns:minmax(0,1fr);gap:8px;margin-top:8px"><label for="voiceLanguageDoctor" style="font-size:12px;font-weight:800;color:#4c5d53">Voice language / Lugha ya sauti</label><select id="voiceLanguageDoctor" aria-label="Choose voice language"><option value="sw-KE">Kiswahili (Kenya)</option><option value="en-KE" selected>English (Kenya)</option><option value="device">Use phone language</option></select><div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><button class="btn light small" type="button" id="voiceInputBtn" aria-describedby="voiceInputStatus">🎙️ Speak / Zungumza</button><span id="voiceInputStatus" class="muted" role="status" aria-live="polite">Choose English or Kiswahili, speak, then review the text before submitting. / Chagua lugha, zungumza, kisha hakiki maandishi.</span></div></div></div>
+        <div class="field"><label for="farmCounty">County / Kaunti</label><input id="farmCounty" autocomplete="address-level1" placeholder="e.g. Meru, Kisumu, Nakuru"></div><div class="field"><label for="farmStage">Crop growth stage / animal age & number affected</label><input id="farmStage" placeholder="e.g. maize flowering; 2 cows, 3 years old"></div><div class="field full"><label for="farmRecentChanges">Recent changes (optional)</label><input id="farmRecentChanges" placeholder="e.g. new feed, fertilizer, spray, medicine, rainfall or water source"></div><div class="field"><label for="duration">How long has this been happening?</label><select id="duration"><option>Today</option><option>1–3 days</option><option>4–7 days</option><option>More than a week</option><option>Not sure</option></select></div>
+        <div class="field"><label for="photo">Attach a photo (optional)</label><input type="file" id="photo" accept="image/*"></div>
+      </div>
+      <button class="btn dark" type="submit">Prepare assessment →</button>
+    </form>
+    <div id="doctorResult" class="result hidden"></div>
+  </div>
+  <div class="notice" style="margin-bottom:16px"><strong>Animal Health & Treatment Records / Kumbukumbu za Afya ya Wanyama</strong> Keep animal/group health history, veterinary visits, vaccinations, treatments, follow-up dates and confirmed milk/meat withdrawal end dates. Export a backup from your phone. <a href="/animal-health-records.html" style="color:var(--green2);font-weight:800">Open Animal Health Records →</a><br><small>Records are stored on this device. Follow a qualified veterinarian and product label; this tool does not diagnose or prescribe.</small></div>
+  <div class="notice danger"><strong>Urgent animal warning:</strong> breathing difficulty, inability to stand, severe bleeding, suspected poisoning, sudden deaths, or several animals becoming ill need prompt veterinary attention. Do not delay care while using an app.</div>
+  <div class="card" style="margin-top:18px">
+    <div class="section-head" style="margin-top:0"><div><h2>Trusted Kenyan farming resources</h2><p>Official research, plant-health and veterinary service links. These open external websites and may need internet access.</p></div></div>
+    <div class="list">
+      <div class="list-row"><div class="round">🌱</div><div><strong>KALRO Digital Agriculture Platform</strong><small>Crop and livestock good practices, weather/advisory tools and value-chain information.</small><a class="text-link" href="https://keep.kalro.org/" target="_blank" rel="noopener noreferrer">Open KALRO platform ↗</a></div></div>
+      <div class="list-row"><div class="round">🪴</div><div><strong>KEPHIS — Plant health and seed quality</strong><small>Plant health information, pest reporting and guidance on quality seed and agricultural inputs.</small><a class="text-link" href="https://www.kephis.go.ke/" target="_blank" rel="noopener noreferrer">Open KEPHIS ↗</a></div></div>
+      <div class="list-row"><div class="round">🐄</div><div><strong>Directorate of Veterinary Services</strong><small>Official veterinary public-health and animal diagnostic service information.</small><a class="text-link" href="https://dvs.ecitizen.go.ke/" target="_blank" rel="noopener noreferrer">Open Veterinary Services ↗</a></div></div>
+      <div class="list-row"><div class="round">🧪</div><div><strong>KALRO laboratory services</strong><small>Explore soil, crop-health and animal-feed laboratory services through the official KALRO portal.</small><a class="text-link" href="https://kalro.ecitizen.go.ke/" target="_blank" rel="noopener noreferrer">Open KALRO services ↗</a></div></div>
+    </div>
+    <p class="muted" style="font-size:12px;margin-top:12px">MKULIMA does not control these external websites. Verify advice for your crop, location and season. Do not treat this app or a photo as a confirmed diagnosis.</p>
+  </div>
+</section>
+
+<section class="view" id="view-calculator">
+  <h1 class="page-title">Farm Calculator</h1><p class="page-intro">Use your own figures to estimate simple farm economics. Results depend on the accuracy of the numbers you enter.</p>
+  <div class="card">
+    <div class="section-head" style="margin-top:0"><div><h2>🥛 Dairy income & cost</h2><p>Estimate daily milk revenue and feed margin.</p></div></div>
+    <form id="calcForm">
+      <div class="form-grid">
+        <div class="field"><label>Milk produced per day (litres)</label><input id="milk" type="number" min="0" step=".1" value="12" required></div>
+        <div class="field"><label>Milk selling price (KSh/litre)</label><input id="milkPrice" type="number" min="0" step=".5" value="55" required></div>
+        <div class="field"><label>Feed cost per day (KSh)</label><input id="feedCost" type="number" min="0" step="1" value="350" required></div>
+        <div class="field"><label>Other daily costs (KSh)</label><input id="otherCost" type="number" min="0" step="1" value="100" required></div>
+      </div>
+      <button class="btn dark" type="submit">Calculate estimate</button>
+    </form>
+    <div id="calcResult" class="result"><span class="muted">Estimated daily revenue</span><br><strong id="revenue">KSh 660</strong><div class="muted" style="margin-top:5px">Estimated daily balance after the costs entered: <b id="balance">KSh 210</b></div><div class="muted" style="font-size:11px;margin-top:6px">Not full farm profit: labour, veterinary care, breeding, equipment, depreciation and other costs may be missing.</div></div>
+  </div>
+  <div class="card" style="margin-top:14px"><div class="section-head" style="margin-top:0"><div><h2>🌱 General planning tools</h2><p>More calculators can be added as we validate farmer needs.</p></div></div><div class="grid"><div><strong>Seed requirement</strong><p class="muted" style="font-size:12px">Plan from plot area and seed rate recommended for your crop/variety.</p></div><div><strong>Input budget</strong><p class="muted" style="font-size:12px">List costs before planting or stocking.</p></div><div><strong>Break-even price</strong><p class="muted" style="font-size:12px">Compare expected costs with planned output.</p></div></div></div>
+</section>
+
+<section class="view" id="view-records">
+  <h1 class="page-title">FarmBook & Records</h1><p class="page-intro">Keep a basic diary of your farm activities. These prototype records are saved in this browser on this device; they are not backed up to a server.</p>
+  <div class="card"><form id="recordForm"><div class="form-grid">
+    <div class="field"><label>Record type</label><select id="recordType"><option>Expense</option><option>Income</option><option>Harvest</option><option>Animal health</option><option>Milk production</option><option>Planting</option><option>Other</option></select></div>
+    <div class="field"><label>Date</label><input id="recordDate" type="date" required></div>
+    <div class="field"><label>Amount (KSh, optional)</label><input id="recordAmount" type="number" min="0" step=".01" placeholder="0"></div>
+    <div class="field"><label>Crop / animal / activity</label><input id="recordTitle" placeholder="e.g. bought dairy meal" required></div>
+    <div class="field full"><label>Notes</label><textarea id="recordNotes" placeholder="Quantity, result, supplier or anything to remember…"></textarea></div>
+  </div><button class="btn dark">Save record</button></form></div>
+   <div class="section-head" id="farmbook"><div><h2>Farm ledger</h2><p>Search, review and back up your locally saved farm diary.</p></div><div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn dark small" href="/farmbook-cloud.html">Secure cloud sync ↗</a><button class="btn light small" type="button" onclick="exportRecords()">Export CSV</button><button class="btn light small" type="button" onclick="exportBackup()">Back up data</button><button class="btn light small" type="button" onclick="$('backupFile').click()">Restore backup</button><input class="hidden" id="backupFile" type="file" accept=".json,application/json" aria-label="Choose a MKULIMA backup file"></div></div>
+   <div class="form-grid" style="margin-bottom:12px"><div class="field" style="margin-bottom:0"><label for="recordSearch">Search records</label><input id="recordSearch" type="search" placeholder="Search activity, notes or date…"></div><div class="field" style="margin-bottom:0"><label for="recordFilter">Filter by type</label><select id="recordFilter"><option value="">All record types</option><option>Expense</option><option>Income</option><option>Harvest</option><option>Animal health</option><option>Milk production</option><option>Planting</option><option>Other</option></select></div></div>
+   <div class="stats" id="recordSummary" aria-live="polite"></div>
+  <div class="card table-wrap" id="recordsList"></div>
+</section>
+
+<section class="view" id="view-reminders">
+  <h1 class="page-title">Smart Reminders</h1><p class="page-intro">Create a task list for farm activities. Browser reminders are stored on this device; this prototype does not yet send SMS, WhatsApp or push notifications.</p>
+  <div class="card"><form id="reminderForm"><div class="form-grid">
+    <div class="field"><label>Task</label><input id="reminderTitle" required placeholder="e.g. check calf appetite"></div>
+    <div class="field"><label>Due date</label><input id="reminderDate" type="date" required></div>
+    <div class="field"><label>Category</label><select id="reminderCategory"><option>Animal care</option><option>Crop care</option><option>Water / irrigation</option><option>Farm business</option><option>Other</option></select></div>
+  </div><button class="btn dark">Add reminder</button></form></div>
+  <div class="section-head"><div><h2>Your reminders</h2><p>Mark tasks complete when finished.</p></div></div><div class="card" id="remindersList"></div>
+</section>
+
+<section class="view" id="view-market">
+  <h1 class="page-title">Farm Marketplace</h1><p class="page-intro">The planned MKULIMA marketplace will connect farmers to suppliers, buyers and agricultural service providers. Listings below are examples of categories, not verified offers.</p>
+  <div class="notice">Marketplace transactions, seller verification, payments and dispute handling are not live in this prototype. Do not send money based on an unverified listing.</div>
+  <div class="grid">
+    <div class="card"><div class="emoji">🌾</div><h3>Seeds & inputs</h3><p class="muted">Seeds, fertiliser, crop protection and soil testing.</p><span class="tag">Planned category</span></div>
+    <div class="card"><div class="emoji">🐄</div><h3>Livestock & feed</h3><p class="muted">Animal feed, equipment, livestock and breeding services.</p><span class="tag">Planned category</span></div>
+    <div class="card"><div class="emoji">🩺</div><h3>Farm services</h3><p class="muted">Veterinarians, agronomists, soil labs and farm technicians.</p><span class="tag">Planned category</span></div>
+    <div class="card"><div class="emoji">🥑</div><h3>Find buyers</h3><p class="muted">Help farmers connect with produce buyers and aggregators.</p><span class="tag">Planned category</span></div>
+    <div class="card"><div class="emoji">🚚</div><h3>Transport & logistics</h3><p class="muted">Explore produce collection and delivery options.</p><span class="tag">Planned category</span></div>
+    <div class="card"><div class="emoji">🤝</div><h3>List a service</h3><p class="muted">Supplier onboarding and verification workflow to be built.</p><button class="btn light small" onclick="toast('Supplier onboarding is planned, but not yet live.')">Register interest</button></div>
+  </div>
+</section>
+
+<section class="view" id="view-pricing">
+  <h1 class="page-title">Plans & Subscriptions</h1>
+  <div class="card" id="trialCard" style="margin:0 0 16px;border:2px solid var(--green2);background:linear-gradient(135deg,#f2f8e8,#fff)">
+    <span class="badge">MKULIMA DISCOVERY PASS</span><h2 style="margin:10px 0 5px;font-size:23px">Explore MKULIMA for 72 hours</h2>
+    <p class="muted" style="margin:0 0 12px">Take a three-day guided preview of the farming toolkit before deciding whether a paid plan is right for you. No payment is taken to start this preview.</p>
+    <div id="trialStatus" role="status" aria-live="polite" class="result" style="margin:0 0 12px"><strong>72 hours to explore</strong><div style="font-size:12px;color:var(--muted)">Start your preview below.</div></div>
+    <div style="display:flex;gap:9px;flex-wrap:wrap"><button id="startTrialBtn" class="btn primary" onclick="startTrial()">Start my 72-hour preview</button><button class="btn light" onclick="navigate('assistant')">Explore farm assistant →</button></div>
+    <p style="font-size:11px;color:var(--muted);margin:12px 0 0">Secure Discovery Pass: sign in to start a one-time, server-timed 72-hour preview. Open the Subscription Centre to create an account. Trial eligibility depends on backend configuration.</p>
+  </div><p class="page-intro">Explore MKULIMA plans and manage your account through the <a href="/subscription.html" style="color:var(--green2);font-weight:800">Secure Subscription Centre →</a>. <a href="/security.html" style="color:var(--green2);font-weight:800">Read Security & Privacy Centre →</a> Payments page service contact: <strong>DENIS MUTHOMI</strong>. The name shown on the M-Pesa confirmation screen is controlled by Safaricom account registration, not this website.</p><div class="notice"><strong>M-Pesa payment instructions:</strong> Review the payment details and important safety notes before making any payment. <a href="/payments.html" style="color:var(--green2);font-weight:800">Open M-Pesa instructions →</a></div>
+  <div class="pricing">
+    <div class="card price-card"><span class="badge">START HERE</span><h3>Free</h3><p class="muted" style="font-size:12px">Explore the essentials</p><div class="price">KSh 0 <small>/ forever</small></div><ul><li>Basic farm guidance</li><li>Starter farm calculator</li><li>Local device records</li><li>Preview of farm tools</li></ul><button class="btn light" style="width:100%" onclick="selectPlan('Free')">Use Free plan</button></div>
+    <div class="card price-card popular"><span class="badge">FLEXIBLE ACCESS</span><h3>Weekly</h3><p class="muted" style="font-size:12px">For short-term farm needs</p><div class="price">KSh 300 <small>/ week</small></div><ul><li>Expanded AI assistance (planned)</li><li>Crop and livestock assessments (planned)</li><li>More farm calculations</li><li>Farm planning tools</li></ul><button class="btn dark" style="width:100%" onclick="selectPlan('Weekly')">Choose Weekly</button></div>
+    <div class="card price-card"><span class="badge">BEST MONTHLY VALUE</span><h3>Monthly</h3><p class="muted" style="font-size:12px">For regular farm management</p><div class="price">KSh 1,050 <small>/ month</small></div><ul><li>All planned Weekly features</li><li>Farm records and insights</li><li>Advanced calculators (planned)</li><li>Priority support (planned)</li></ul><button class="btn dark" style="width:100%" onclick="selectPlan('Monthly')">Choose Monthly</button></div>
+  </div>
+  <div class="card" style="margin-top:14px"><h3>Pay by M-Pesa</h3><p class="muted">Use the Secure Subscription Centre for an M-Pesa prompt and server-side payment verification. Manual PayBill instructions remain available separately.</p><a class="btn dark" href="/payments.html">View M-Pesa payment instructions →</a></div><div class="card" style="margin-top:14px"><h3>Commercial & enterprise plans</h3><p class="muted">For large farms, cooperatives, agrovets and agricultural organisations. Pricing will be determined after customer discovery.</p><button class="btn light" onclick="toast('Enterprise enquiries are not connected yet. Add contact details before launch.')">Enterprise plan — coming soon</button></div>
+  <div class="notice">Before launch, Avenqor Holdings Ltd must connect a payment provider, define renewals/cancellations and refunds, publish terms and privacy information, and test payment security. Never collect or store a user's M-Pesa PIN or card security code.</div>
+</section>
+
+<section class="view" id="view-profile">
+  <h1 class="page-title">My Farm Profile</h1><p class="page-intro">Save basic details so MKULIMA can eventually tailor guidance to your farm and location.</p>
+  <div class="card"><form id="profileForm"><div class="form-grid">
+    <div class="field"><label>Your name</label><input id="profileName" placeholder="Name (optional)"></div>
+    <div class="field"><label>County</label><select id="profileCounty"><option value="">Choose county</option><option>Meru</option><option>Kiambu</option><option>Nyeri</option><option>Kirinyaga</option><option>Embu</option><option>Tharaka-Nithi</option><option>Machakos</option><option>Nakuru</option><option>Uasin Gishu</option><option>Kisumu</option><option>Trans Nzoia</option><option>Other / not listed</option></select></div>
+    <div class="field"><label>Main farming activity</label><select id="profileFarm"><option>Mixed farming</option><option>Dairy</option><option>Crop farming</option><option>Poultry</option><option>Livestock</option><option>Horticulture</option><option>Fish farming</option><option>Commercial farm</option><option>Other</option></select></div>
+    <div class="field"><label>Farm size</label><select id="profileSize"><option>Home garden / small plot</option><option>Under 1 acre</option><option>1–5 acres</option><option>6–20 acres</option><option>Over 20 acres</option><option>Prefer not to say</option></select></div>
+    <div class="field full"><label>Main goal</label><select id="profileGoal"><option>Increase yields</option><option>Reduce costs</option><option>Improve animal health</option><option>Start farming</option><option>Improve farm records</option><option>Find buyers</option><option>Grow a profitable farm business</option></select></div>
+  </div><button class="btn dark">Save farm profile</button></form><div id="profileSaved" class="muted" style="font-size:12px;margin-top:10px"></div></div>
+  <div class="card" style="margin-top:14px"><h3>About MKULIMA</h3><p class="muted">MKULIMA™ is an agricultural technology concept created by <strong>AVENQOR HOLDINGS LIMITED</strong>. Our aim is to make useful farming information and digital farm tools more accessible.</p><p class="muted" style="font-size:12px">This prototype is not a substitute for a qualified veterinarian, agronomist, soil laboratory or emergency service. AI features, cloud sync, authentication, subscriptions, notifications and marketplace transactions require further implementation and testing.</p></div>
+</section>
+</main>
+</div>
+<footer class="footer"><strong>MKULIMA™</strong> · Smart Farming. Better Harvests. Higher Profits.<br>Created by <strong>AVENQOR HOLDINGS LIMITED</strong><br><span id="year"></span> · <button class="text-link" onclick="shareMkulima()">Share MKULIMA ↗</button> · <button class="text-link" onclick="navigate('profile')">About & profile</button></footer>
+<nav class="bottomnav">
+<button class="active" data-view="home" onclick="navigate('home')"><span>⌂</span>Home</button>
+<button data-view="assistant" onclick="navigate('assistant')"><span>✳</span>Ask AI</button>
+<button data-view="doctor" onclick="navigate('doctor')"><span>🌿</span>Doctor</button>
+<button data-view="records" onclick="navigate('records')"><span>📒</span>FarmBook</button>
+<button data-view="pricing" onclick="navigate('pricing')"><span>♧</span>Plans</button>
+</nav>
+<div class="toast" id="toast"></div>
+</div>
+<script>
+async function shareMkulima(){const shareData={title:'MKULIMA — Smart Farming for Kenya',text:'Explore MKULIMA by Avenqor Holdings Ltd: practical farming tools and Kenya-focused crop and livestock resources.',url:'https://mkulim.netlify.app/'};try{if(navigator.share){await navigator.share(shareData)}else if(navigator.clipboard?.writeText){await navigator.clipboard.writeText(shareData.url);toast('MKULIMA link copied. Share it on WhatsApp, Facebook or other platforms.')}else{window.prompt('Copy the MKULIMA website link:',shareData.url)}}catch(e){if(e.name!=='AbortError')toast('Share unavailable. Copy this link: https://mkulim.netlify.app/')}}
+const $=id=>document.getElementById(id);
+const get=(key, fallback)=>{try{return JSON.parse(localStorage.getItem('mkulima_'+key)) ?? fallback}catch{return fallback}};
+const put=(key,val)=>{try{localStorage.setItem('mkulima_'+key,JSON.stringify(val));return true}catch(error){if(typeof toast==='function')toast('Could not save this change on this device. Check available storage and try again.');return false}};
+let records=get('records',[]), reminders=get('reminders',[]), plan=get('plan','Free'), profile=get('profile',{});
+function todayLocalDate(){const d=new Date();d.setMinutes(d.getMinutes()-d.getTimezoneOffset());return d.toISOString().slice(0,10)}
+function navigate(name){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id==='view-'+name));document.querySelectorAll('[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===name));window.scrollTo({top:0,behavior:'smooth'});if(name==='records')renderRecords();if(name==='reminders')renderReminders();}
+function toast(msg){let t=$('toast');t.textContent=msg;t.style.display='block';clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.style.display='none',2600)}
+function getTrial(){const value=get('trial',null);return value&&Number.isFinite(value.startedAt)&&Number.isFinite(value.endsAt)?value:null}
+function formatTrial(ms){const total=Math.ceil(ms/1000),h=Math.floor(total/3600),m=Math.floor((total%3600)/60),s=total%60;return h+'h '+String(m).padStart(2,'0')+'m '+String(s).padStart(2,'0')+'s'}
+function startTrial(){location.href="/subscription.html#trial"}
+function renderTrial(){const status=$('trialStatus'),button=$('startTrialBtn');if(!status||!button)return;status.innerHTML='<strong>One-time, account-based 72-hour Discovery Pass</strong><div style="font-size:12px;color:var(--muted)">Your start time and expiry are stored server-side after account sign-in.</div>';button.textContent='Open secure Subscription Centre';button.disabled=false}
+function selectPlan(p){if(p==='Free'){const previousPlan=plan;plan=p;if(!put('plan',plan)){plan=previousPlan;return}updateStats();toast('Free plan selected. No payment was taken.');return}location.href='/subscription.html?plan='+encodeURIComponent(p)}
+function updateStats(){$('statRecords').textContent=records.length;$('statReminders').textContent=reminders.filter(r=>!r.done).length;$('statPlan').textContent=plan;$('statPlanDesc').textContent=plan==='Free'?'Starter access':'Manage in Subscription Centre';$('planPill').textContent=plan.toUpperCase()+' PLAN';renderTrial()}
+function assistantReply(q){
+ const s=q.toLocaleLowerCase(),language=$('voiceLanguageAssistant').value,sw=language==='sw-KE';
+ const urgent=/cannot breathe|trouble breathing|collapse|cannot stand|severe bleeding|sudden deaths|poison|shindwa kupumua|hawezi kusimama|damu nyingi|vifo vya ghafla|sumu/.test(s);
+ if(urgent)return sw?'TAHADHARI YA DHARURA: Ikiwa mnyama anashindwa kupumua, hawezi kusimama, anatokwa damu nyingi, anashukiwa kupewa sumu au kuna vifo vya ghafla, wasiliana na daktari wa mifugo mara moja. Usimpe dawa bila ushauri wa mtaalamu.':'URGENT WARNING: If an animal struggles to breathe, cannot stand, has severe bleeding, suspected poisoning, or sudden deaths occur, contact a veterinarian immediately. Do not medicate without professional advice.';
+ if(/yellow|leaf|maize|crop|spot|wilt|pest|plant|mahindi|majani|kunyauka|wadudu|zao/.test(s))return sw?'Kwa tatizo la zao, taja jina la zao, umri wake, dalili zilipoanza, kama majani ya zamani au mapya yameathirika, na kama tatizo lipo shambani kote au sehemu chache. Kagua unyevu na mifereji ya maji, piga picha iliyo wazi na wasiliana na afisa ugani ikiwa tatizo linaenea. Usitumie dawa kabla ya kutambua chanzo.':'For a crop problem, tell me the crop, its age, when symptoms began, whether old or young leaves are affected, and whether the problem is across the field or in patches. Check soil moisture and drainage, take a clear photo, and contact an extension officer if damage spreads. Avoid spraying until the cause is clearer.';
+ if(/cow|milk|dairy|feed|fodder|napier|animal|calf|goat|poultry|chicken|pig|sick|mastitis|ngombe|ng’ombe|ng'ombe|maziwa|kuku|mbuzi|nguruwe|mgonjwa|kiwele/.test(s))return sw?'Kwa mnyama mgonjwa, rekodi umri, dalili na zilipoanza, hamu ya kula, joto ikiwa unaweza kulipima salama, mabadiliko ya maziwa au mayai, chakula cha hivi karibuni na idadi ya wanyama walioathirika. Kwa shida ya kupumua, kushindwa kusimama, damu nyingi, sumu inayoshukiwa au vifo vya ghafla, wasiliana na daktari wa mifugo haraka. Usitumie antibiotiki bila ushauri wa mtaalamu.':'For a sick animal, record its age, symptoms and start time, appetite, temperature if safely measured, milk or egg changes, recent feed changes and how many animals are affected. For breathing difficulty, inability to stand, severe bleeding, suspected poisoning or sudden deaths, contact a veterinarian promptly. Do not use antibiotics without qualified guidance.';
+ if(/record|account|expense|profit|income|budget|cost|business|rekodi|gharama|faida|mapato|bajeti/.test(s))return sw?'Rekodi tarehe, shughuli, kiasi kilichozalishwa, pesa zilizoingia, pesa zilizotumika na maelezo. Tenganisha matumizi ya nyumbani na ya shamba inapowezekana. Tumia FarmBook kuhifadhi rekodi na kikokotoo kukadiria mapato ukilinganisha na gharama ulizoingiza.':'Record the date, activity, quantity produced, money received, money spent and notes. Separate household and farm expenses where possible. Use FarmBook to save entries and the calculator to compare revenue with the costs you enter.';
+ if(/soil|fertili|ph|nutrient|udongo|mbolea/.test(s))return sw?'Ushauri wa udongo hutegemea zao, aina ya udongo, historia ya shamba na hali ya eneo. Picha haiwezi kupima pH au virutubisho kwa uhakika. Ikiwezekana, fanya kipimo cha udongo katika maabara inayotambulika. Niambie kaunti, zao, aina ya udongo na mbolea iliyotumika hivi karibuni.':'Soil advice depends on the crop, soil type, field history and local conditions. A photo cannot reliably measure pH or nutrients. Arrange a soil test through a recognised lab if possible. Tell me your county, crop, soil description and recent fertiliser use.';
+ if(/weather|rain|planting|spray|irrigat|hali ya hewa|mvua|kupanda|kunyunyizia|umwagiliaji/.test(s))return sw?'Muda wa kupanda au kunyunyizia hutegemea eneo lako na utabiri wa sasa. Programu hii bado haijaunganishwa na hali ya hewa ya moja kwa moja. Kagua utabiri wa kuaminika kabla ya kufanya uamuzi. Niambie kaunti, zao, hatua ya ukuaji na shughuli unayopanga.':'Planting and spraying timing depends on your location and current forecast. This app is not yet connected to live weather. Check a trusted forecast before deciding. Tell me your county, crop, growth stage and planned activity.';
+ return sw?'Asante kwa swali lako. Ili nikusaidie vizuri, niambie kaunti yako, zao au mnyama, dalili ulizoona, tatizo lilipoanza na hatua ulizojaribu. Huu ni mwongozo wa awali unaotegemea kanuni, si huduma ya AI inayozalisha majibu moja kwa moja.':'Thanks for your question. To help you better, tell me your county, crop or animal, what you observed, when it began and what you have tried. These are initial rule-based suggestions, not a connected generative AI service.';
+}
+function speakLatestAnswer(){
+ const bots=[...$('messages').querySelectorAll('.bubble.bot')];
+ if(!bots.length){$('answerSpeechStatus').textContent='No answer to read yet. / Hakuna jibu la kusoma bado.';return}
+ if(!('speechSynthesis'in window)){$('answerSpeechStatus').textContent='Your browser does not support spoken output. / Kivinjari hiki hakiungi mkono sauti.';return}
+ speechSynthesis.cancel();
+ const text=bots[bots.length-1].textContent,lang=$('voiceLanguageAssistant').value,code=lang==='device'?(navigator.language||'en-KE'):lang;
+ const utterance=new SpeechSynthesisUtterance(text);utterance.lang=code;utterance.rate=.9;
+ const voices=speechSynthesis.getVoices(),base=code.slice(0,2).toLowerCase();
+ utterance.voice=voices.find(v=>v.lang.toLowerCase()===code.toLowerCase())||voices.find(v=>v.lang.toLowerCase().startsWith(base))||null;
+ utterance.onstart=()=>{$('answerSpeechStatus').textContent=code.startsWith('sw')?'Inasoma jibu kwa sauti…':'Reading answer aloud…'};
+ utterance.onend=()=>{$('answerSpeechStatus').textContent=code.startsWith('sw')?'Jibu limekamilika.':'Finished reading the answer.'};
+ utterance.onerror=()=>{$('answerSpeechStatus').textContent='Speech failed; check phone language/voice settings. / Sauti imeshindwa; kagua mipangilio ya lugha ya simu.'};
+ speechSynthesis.speak(utterance);
+}
+$('speakLastAnswer').addEventListener('click',speakLatestAnswer);
+$('stopAnswerSpeech').addEventListener('click',()=>{if('speechSynthesis'in window)speechSynthesis.cancel();$('answerSpeechStatus').textContent='Stopped. / Imesimamishwa.'});
+function addMessage(text,who){let el=document.createElement('div');el.className='bubble '+who;el.textContent=text;$('messages').appendChild(el);$('messages').scrollTop=$('messages').scrollHeight}
+window.mkulimaSendQuestion=function(){try{navigate('assistant');const input=document.getElementById('chatInput');ask(input?input.value:'')}catch(error){const box=document.getElementById('messages');if(box){const msg=document.createElement('div');msg.className='bubble bot';msg.textContent='MKULIMA could not start the answer. Please refresh the page and try again.';box.appendChild(msg)}}};
+async function ask(q){
+ q=String(q||'').trim();if(!q)return;
+ addMessage(q,'user');
+ const input=$('chatInput');if(input)input.value='';
+ const loading=document.createElement('div');loading.className='bubble bot';loading.textContent='Thinking… / Nafikiria…';loading.setAttribute('aria-live','polite');$('messages').appendChild(loading);$('messages').scrollTop=$('messages').scrollHeight;
+ try{
+   let session=null;try{session=JSON.parse(sessionStorage.getItem('mkulima_secure_session_v1')||'null')}catch{}
+   if(session&&session.access_token){
+     const language=$('voiceLanguageAssistant').value==='sw-KE'?'sw':'en';
+     const response=await fetch('/.netlify/functions/farm-ai',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+session.access_token},body:JSON.stringify({question:q,language})});
+     const data=await response.json().catch(()=>({}));
+     if(response.ok&&data.answer){loading.textContent=data.answer;return}
+     if(response.status===401||response.status===403){loading.textContent=assistantReply(q)+'\n\nFor a personalised AI answer, sign in and check that your Discovery Pass or subscription is active. / Kwa jibu la AI, ingia na uhakikishe Discovery Pass au usajili wako unatumika.';return}
+     if(response.status===503){loading.textContent=assistantReply(q)+'\n\nAI service setup is incomplete. This is general guidance, not an AI diagnosis.';return}
+     throw new Error(data.error||'AI service unavailable');
+   }
+   loading.textContent=assistantReply(q)+'\n\nThis is general rule-based guidance. Sign in and activate access for personalised AI guidance.';
+ }catch(error){
+   loading.textContent=assistantReply(q)+'\n\nAI could not connect right now; this is general guidance only. '+(error&&error.message?error.message:'Please try again later.');
+ }
+ $('messages').scrollTop=$('messages').scrollHeight;
+}
+$('chatForm').addEventListener('submit',e=>{e.preventDefault();ask($('chatInput').value)});
+
+function quickAsk(q){navigate('assistant');ask(q)}
+function startMkulimaVoice({buttonId,statusId,targetId,languageId,append=false}){
+  const button=$(buttonId),status=$(statusId),target=$(targetId),language=$(languageId);
+  if(!button||!status||!target||!language)return;
+  button.addEventListener('click',()=>{
+    const Recognition=window.SpeechRecognition||window.webkitSpeechRecognition;
+    if(!Recognition){status.textContent='Voice recognition is unavailable in this browser. Use your phone keyboard microphone instead. / Sauti haipatikani hapa; tumia maikrofoni ya kibodi ya simu.';toast('Try your phone keyboard microphone. / Jaribu maikrofoni ya kibodi.');return}
+    const recognition=new Recognition();
+    const selected=language.value;
+    recognition.lang=selected==='device'?(navigator.language||'en-KE'):selected;
+    recognition.continuous=false;
+    recognition.interimResults=true;
+    recognition.maxAlternatives=1;
+    button.disabled=true;
+    status.textContent=recognition.lang==='sw-KE'?'Inasikiliza… Zungumza sasa.':'Listening… Speak now.';
+    let finalTranscript='';
+    recognition.onresult=event=>{
+      let interim='';
+      for(let i=event.resultIndex;i<event.results.length;i++){
+        const part=event.results[i][0].transcript||'';
+        if(event.results[i].isFinal)finalTranscript+=part;else interim+=part;
+      }
+      const preview=(finalTranscript+' '+interim).trim();
+      if(preview)status.textContent=(recognition.lang==='sw-KE'?'Imesikia: ':'Recognised: ')+preview;
+      if(finalTranscript.trim()){
+        const text=finalTranscript.trim();
+        target.value=append?(target.value.trim()?target.value.trim()+' ':'')+text:text;
+        target.dispatchEvent(new Event('input',{bubbles:true}));
+        status.textContent=recognition.lang==='sw-KE'?'Sauti imeandikwa. Tafadhali hakiki maandishi.':'Voice text added. Please review before sending.';
+      }
+    };
+    recognition.onerror=event=>{
+      const msg=event.error==='not-allowed'?'Microphone permission denied. Allow microphone access or type instead. / Ruhusu maikrofoni au andika.':
+      event.error==='language-not-supported'?'This browser does not support that voice language. Try the other language or your keyboard microphone. / Lugha hii haijawezeshwa. Jaribu lugha nyingine.':
+      'Voice input could not finish. Try again or use your phone keyboard microphone. / Jaribu tena au tumia maikrofoni ya kibodi.';
+      status.textContent=msg;
+    };
+    recognition.onend=()=>{
+      button.disabled=false;
+      if(!finalTranscript.trim()&&target.value.trim()&&status.textContent.includes('Recognised:')){
+        status.textContent='Please tap the microphone again or use your keyboard microphone to insert the recognised words. / Bonyeza maikrofoni tena au tumia ya kibodi.';
+      }else if(!finalTranscript.trim()&&!status.textContent.includes('denied')&&!status.textContent.includes('support')&&!status.textContent.includes('unavailable')&&!status.textContent.includes('language')){
+        status.textContent='No clear speech received. Check microphone permission and try again, or use your keyboard microphone. / Hakuna sauti iliyoeleweka; ruhusu maikrofoni kisha ujaribu tena.';
+      }
+    };
+    try{recognition.start()}catch(error){button.disabled=false;status.textContent='Could not start microphone. Try again or type. / Haikuweza kuwasha maikrofoni.'}
+  });
+}
+startMkulimaVoice({buttonId:'voiceInputBtn',statusId:'voiceInputStatus',targetId:'symptoms',languageId:'voiceLanguageDoctor',append:true});
+startMkulimaVoice({buttonId:'assistantVoiceBtn',statusId:'assistantVoiceStatus',targetId:'chatInput',languageId:'voiceLanguageAssistant',append:false});
+$('doctorForm').addEventListener('submit',async e=>{
+ e.preventDefault();
+ const subject=$('subject').value,what=$('cropType').value||subject.toLowerCase(),sym=$('symptoms').value.trim(),dur=$('duration').value,file=$('photo').files[0],county=$('farmCounty')?.value.trim()||'not provided',stage=$('farmStage')?.value.trim()||'not provided',recent=$('farmRecentChanges')?.value.trim()||'not provided';
+ if(!sym&&!file){toast('Describe the problem or attach a photo first.');return}
+ if(file&&(!file.type||!['image/jpeg','image/png','image/webp'].includes(file.type))){toast('Choose a JPEG, PNG or WebP photo.');return}
+ if(file&&file.size>8*1024*1024){toast('Photo is larger than 8 MB. Choose a smaller photo.');return}
+ const result=$('doctorResult');result.classList.remove('hidden');
+ result.innerHTML='<p><strong>Preparing your farm assessment… / Tunaandaa tathmini ya shamba…</strong></p>';
+ const animal=/cow|calf|poultry|pig|goat|sheep|animal|dairy/i.test(subject);
+ const language=$('voiceLanguageDoctor')?.value==='sw-KE'?'sw':'en';
+ const urgent=animal?' <p class="notice danger"><b>Urgent:</b> Trouble breathing, collapse, inability to stand, severe bleeding, suspected poisoning or sudden deaths require prompt veterinary help. Do not use unprescribed medicines.</p>':'';
+ let image='';
+ try{
+   if(file){
+     image=await new Promise((resolve,reject)=>{
+       const reader=new FileReader();
+       reader.onerror=()=>reject(new Error('Could not read the photo. Please choose it again.'));
+       reader.onload=()=>{
+         const img=new Image();
+         img.onerror=()=>reject(new Error('Could not open this image. Try another photo.'));
+         img.onload=()=>{
+           const max=1400,scale=Math.min(1,max/Math.max(img.width,img.height));
+           const canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(img.width*scale));canvas.height=Math.max(1,Math.round(img.height*scale));
+           const ctx=canvas.getContext('2d');ctx.drawImage(img,0,0,canvas.width,canvas.height);
+           let data=canvas.toDataURL('image/jpeg',.78);
+           if(data.length>4200000)data=canvas.toDataURL('image/jpeg',.58);
+           if(data.length>4500000){reject(new Error('Photo is still too large. Choose a smaller image.'));return}
+           resolve(data);
+         };img.src=reader.result;
+       };reader.readAsDataURL(file);
+     });
+   }
+   let session=null;try{session=JSON.parse(sessionStorage.getItem('mkulima_secure_session_v1')||'null')}catch{}
+   if(session?.access_token){
+     const response=await fetch('/.netlify/functions/farm-ai',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+session.access_token},body:JSON.stringify({question:'Farm case type: '+subject+'; crop/animal/breed: '+what+'; Kenyan county: '+county+'; growth stage or animal age/number affected: '+stage+'; duration: '+(dur||'not stated')+'; recent changes (feed, water, fertilizer, spray, treatment, rainfall): '+recent+'; symptoms and observations: '+(sym||'Please assess the attached photo and ask for missing details')+'. Give cautious first guidance in practical Kenyan context, plausible causes without claiming certainty, observations to distinguish them, safe low-risk next steps, prevention, and when to contact a Kenyan extension officer or veterinarian. Ask focused follow-up questions if key facts are missing. Do not invent live weather, prices, outbreaks or official notices.',image,language})});
+     const data=await response.json().catch(()=>({}));
+     if(response.ok&&data.answer){result.innerHTML='<strong>MKULIMA AI first assessment — '+esc(what)+'</strong><p>'+esc(data.answer).replace(/\n/g,'<br>')+'</p><p class="muted">AI guidance is not a confirmed diagnosis or prescription. Verify locally before treatment.</p>'+urgent;return}
+     result.innerHTML='<strong>AI assessment unavailable</strong><p>'+esc(data.error||'The AI service did not return an answer.')+'</p><p>Check your sign-in, active Discovery Pass/subscription, and the site owner’s secure AI settings. No diagnosis was made.</p>'+urgent;return;
+   }
+   result.innerHTML='<strong>Sign in for AI crop/livestock assessment</strong><p>Case: '+esc(what)+' · Duration: '+esc(dur||'not stated')+'</p><p>Your report: '+esc(sym||'Photo attached')+'</p><p>'+(file?'Photo prepared for AI analysis, but it has not been diagnosed because you are not signed in.':'')+'</p><p>Open the <a href="/subscription.html">MKULIMA account and subscription centre</a>, sign in and activate access, then return to request an AI assessment.</p>'+urgent+'<p class="muted">No diagnosis has been made.</p>';
+ }catch(error){
+   result.innerHTML='<strong>Could not complete the assessment</strong><p>'+esc(error?.message||'Please try again.')+'</p><p>Try a smaller photo or describe the symptoms in text. For severe animal illness, contact a qualified veterinarian.</p>'+urgent;
+ }
+});
+
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function money(n){return 'KSh '+Number(n||0).toLocaleString('en-KE',{maximumFractionDigits:2})}
+function calc() {let rev=Number($('milk').value||0)*Number($('milkPrice').value||0),bal=rev-Number($('feedCost').value||0)-Number($('otherCost').value||0);$('revenue').textContent=money(rev);$('balance').textContent=money(bal);$('balance').style.color=bal<0?'#b94c43':'#123c2f'}
+$('calcForm').addEventListener('submit',e=>{e.preventDefault();calc()});
+function renderRecords(){let query=$('recordSearch').value.trim().toLowerCase(),type=$('recordFilter').value;let matches=records.map((r,index)=>({r,index})).filter(({r})=>(!type||r.type===type)&&(!query||[r.date,r.type,r.title,r.notes].some(value=>String(value||'').toLowerCase().includes(query)))).sort((a,b)=>String(b.r.date).localeCompare(String(a.r.date)));let income=0,expenses=0;matches.forEach(({r})=>{let amount=Number(r.amount)||0;if(r.type==='Income')income+=amount;if(r.type==='Expense')expenses+=amount});$('recordSummary').innerHTML=`<div class="card stat"><span>Shown records</span><strong>${matches.length}</strong><small>Matching this view</small></div><div class="card stat"><span>Income logged</span><strong style="font-size:18px">${money(income)}</strong><small>Income records in view</small></div><div class="card stat"><span>Expenses logged</span><strong style="font-size:18px">${money(expenses)}</strong><small>Expense records in view</small></div><div class="card stat"><span>Balance in view</span><strong style="font-size:18px;color:${income-expenses<0?'#b94c43':'#123c2f'}">${money(income-expenses)}</strong><small>Income less recorded expenses</small></div>`;if(!matches.length){$('recordsList').innerHTML=`<div class="empty">${records.length?'No records match these filters.':'No records yet. Add your first farm record above.'}</div>`;return}$('recordsList').innerHTML='<table><thead><tr><th>Date</th><th>Type / activity</th><th>Amount</th><th></th></tr></thead><tbody>'+matches.map(({r,index})=>`<tr><td>${esc(r.date)}</td><td><strong>${esc(r.title)}</strong><br><small class="muted">${esc(r.type)}${r.notes?' · '+esc(r.notes):''}</small></td><td>${r.amount!==''&&r.amount!=null?money(r.amount):'—'}</td><td><button class="text-link" onclick="deleteRecord(${index})" aria-label="Delete ${esc(r.title)}">Delete</button></td></tr>`).join('')+'</tbody></table>'}
+$('recordForm').addEventListener('submit',e=>{e.preventDefault();records.push({type:$('recordType').value,date:$('recordDate').value,amount:$('recordAmount').value,title:$('recordTitle').value,notes:$('recordNotes').value});if(!put('records',records)){records.pop();return}e.target.reset();$('recordDate').value=todayLocalDate();renderRecords();updateStats();toast('Farm record saved on this device.')});
+function deleteRecord(i){const removed=records.splice(i,1)[0];if(!put('records',records)){records.splice(i,0,removed);renderRecords();return}renderRecords();updateStats()}
+function csvCell(value){let text=String(value??'');if(/^[\s]*[=+\-@]/.test(text))text="'"+text;return '"'+text.replace(/"/g,'""')+'"'}
+function downloadFile(name,data,type){let url=URL.createObjectURL(new Blob([data],{type})),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+function exportRecords(){if(!records.length){toast('No records to export yet.');return}let rows=[['Date','Type','Title','Amount KSh','Notes'],...records.map(r=>[r.date,r.type,r.title,r.amount,r.notes])];let csv=rows.map(row=>row.map(csvCell).join(',')).join('\r\n');downloadFile('mkulima-farm-records.csv','\uFEFF'+csv,'text/csv;charset=utf-8');toast('Farm records exported as CSV.')}
+function exportBackup(){let backup={app:'MKULIMA',version:1,exportedAt:new Date().toISOString(),records,reminders,profile,plan};downloadFile('mkulima-backup-'+todayLocalDate()+'.json',JSON.stringify(backup,null,2),'application/json');toast('Your MKULIMA backup is ready.')}
+function validBackup(data){let recordTypes=['Expense','Income','Harvest','Animal health','Milk production','Planting','Other'],categories=['Animal care','Crop care','Water / irrigation','Farm business','Other'];return data&&data.app==='MKULIMA'&&data.version===1&&Array.isArray(data.records)&&Array.isArray(data.reminders)&&data.profile&&typeof data.profile==='object'&&!Array.isArray(data.profile)&&['Free','Weekly','Monthly'].includes(data.plan)&&data.records.every(r=>r&&typeof r==='object'&&typeof r.date==='string'&&typeof r.title==='string'&&recordTypes.includes(r.type)&&(r.amount===''||r.amount==null||(Number.isFinite(Number(r.amount))&&Number(r.amount)>=0)))&&data.reminders.every(r=>r&&typeof r==='object'&&typeof r.title==='string'&&typeof r.date==='string'&&categories.includes(r.category)&&typeof r.done==='boolean')}
+async function restoreBackup(file){if(!file)return;if(file.size>2*1024*1024){toast('Backup is too large. Choose a file under 2 MB.');return}let previous={records,reminders,profile,plan,stored:['records','reminders','profile','plan'].map(key=>localStorage.getItem('mkulima_'+key))},replacing=false;try{let data=JSON.parse(await file.text());if(!validBackup(data)){toast('This file is not a valid MKULIMA backup. Nothing changed.');return}if(!confirm(`Replace this device's current data with ${data.records.length} records and ${data.reminders.length} reminders from this backup? This cannot be undone.`))return;replacing=true;records=data.records;reminders=data.reminders;profile=data.profile;plan=data.plan;if(!put('records',records)||!put('reminders',reminders)||!put('profile',profile)||!put('plan',plan))throw new Error('Browser storage could not save all backup data');loadProfile();$('profileSaved').textContent='Farm profile restored from backup.';renderRecords();renderReminders();updateStats();toast('Backup restored on this device.')}catch(error){if(replacing){records=previous.records;reminders=previous.reminders;profile=previous.profile;plan=previous.plan;try{['records','reminders','profile','plan'].forEach((key,index)=>{let value=previous.stored[index];if(value===null)localStorage.removeItem('mkulima_'+key);else localStorage.setItem('mkulima_'+key,value)})}catch(rollbackError){toast('Restore failed and browser storage may be partially updated. Reload and check your data before trying again.');return}renderRecords();renderReminders();updateStats()}toast(replacing?'Restore failed. Your previous data has been recovered.':'Could not read that backup. Nothing changed.')}finally{$('backupFile').value=''}}
+function renderReminders(){if(!reminders.length){$('remindersList').innerHTML='<div class="empty">No reminders yet. Add a farm task above.</div>';return}$('remindersList').innerHTML='<div class="list">'+reminders.slice().sort((a,b)=>a.date.localeCompare(b.date)).map((r,i)=>`<div class="list-row"><div class="round">${r.done?'✓':'🔔'}</div><div><strong style="${r.done?'text-decoration:line-through;color:#87948c':''}">${esc(r.title)}</strong><small>${esc(r.date)} · ${esc(r.category)}</small></div><button class="btn light small" onclick="toggleReminder(${reminders.indexOf(r)})">${r.done?'Undo':'Done'}</button><button class="text-link" onclick="deleteReminder(${reminders.indexOf(r)})">×</button></div>`).join('')+'</div>'}
+$('reminderForm').addEventListener('submit',e=>{e.preventDefault();reminders.push({title:$('reminderTitle').value,date:$('reminderDate').value,category:$('reminderCategory').value,done:false});if(!put('reminders',reminders)){reminders.pop();return}e.target.reset();$('reminderDate').value=todayLocalDate();renderReminders();updateStats();toast('Reminder saved on this device.')});
+function toggleReminder(i){reminders[i].done=!reminders[i].done;if(!put('reminders',reminders)){reminders[i].done=!reminders[i].done;return}renderReminders();updateStats()}
+function deleteReminder(i){const removed=reminders.splice(i,1)[0];if(!put('reminders',reminders)){reminders.splice(i,0,removed);renderReminders();return}renderReminders();updateStats()}
+$('profileForm').addEventListener('submit',e=>{e.preventDefault();const previousProfile=profile;profile={name:$('profileName').value,county:$('profileCounty').value,farm:$('profileFarm').value,size:$('profileSize').value,goal:$('profileGoal').value};if(!put('profile',profile)){profile=previousProfile;return}$('profileSaved').textContent='Farm profile saved on this device.';toast('Farm profile saved.')});
+function loadProfile(){if(profile.name)$('profileName').value=profile.name;if(profile.county)$('profileCounty').value=profile.county;if(profile.farm)$('profileFarm').value=profile.farm;if(profile.size)$('profileSize').value=profile.size;if(profile.goal)$('profileGoal').value=profile.goal}
+$('recordSearch').addEventListener('input',renderRecords);$('recordFilter').addEventListener('change',renderRecords);$('backupFile').addEventListener('change',e=>restoreBackup(e.target.files[0]));$('recordDate').value=todayLocalDate();$('reminderDate').value=todayLocalDate();$('year').textContent=new Date().getFullYear();loadProfile();updateStats();renderRecords();renderReminders();calc();window.setInterval(()=>{renderTrial();updateStats();},1000);
+</script>
+<script>
+if ('serviceWorker' in navigator && location.protocol === 'https:') {
+  window.addEventListener('load', () => navigator.serviceWorker.register('/service-worker.js').catch(() => {}));
+}
+</script>
+</body>
+</html>

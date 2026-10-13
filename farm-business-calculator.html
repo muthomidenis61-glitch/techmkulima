@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#174d35"><meta name="description" content="Free mobile-friendly MKULIMA farm income, cost, break-even and profitability calculator for Kenyan farmers.">
+<title>Farm Business Calculator | MKULIMA™</title>
+<style>
+:root{color-scheme:light;--green:#174d35;--green2:#236746;--pale:#edf5ef;--ink:#20342a;--muted:#65756a;--line:#dce6de;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:#f5f8f5;color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+header{background:var(--green);color:#fff;padding:22px 16px}header .wrap,main,.foot{max-width:900px;margin:auto}header a{color:#fff}h1{font-size:clamp(1.6rem,5vw,2.25rem);line-height:1.15;margin:12px 0 8px}h2{font-size:1.2rem;margin:0 0 12px}.muted{color:var(--muted);font-size:.9rem}.hero-note{max-width:650px;color:#e2eee6;margin:0}
+main{padding:18px 14px 32px}.back{display:inline-block;margin-bottom:14px;color:var(--green);font-weight:750;text-decoration:none}.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:17px;margin-bottom:14px;box-shadow:0 4px 18px #183e2610}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field label{display:block;font-weight:700;font-size:.9rem;margin-bottom:5px}.field input,.field select{width:100%;min-height:46px;border:1px solid #bdcfc1;border-radius:10px;padding:10px;font:inherit;background:#fff;color:var(--ink)}.field small{display:block;color:var(--muted);font-size:.78rem;margin-top:4px}
+button,.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;border:0;border-radius:10px;padding:10px 15px;background:var(--green);color:#fff;font-weight:800;font:inherit;text-decoration:none;cursor:pointer}.btn.secondary,button.secondary{background:var(--pale);color:var(--green);border:1px solid #d2e3d6}.actions{display:flex;gap:9px;flex-wrap:wrap}.results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.metric{border-radius:12px;background:var(--pale);padding:13px;min-width:0}.metric span{display:block;color:#53675a;font-size:.82rem}.metric strong{display:block;font-size:clamp(1.1rem,4vw,1.55rem);overflow-wrap:anywhere;color:var(--green)}.metric.negative strong{color:#a72f2f}.notice{padding:12px;border-left:4px solid #c58b26;background:#fff7e5;border-radius:8px;font-size:.9rem}.hidden{display:none}.foot{text-align:center;color:var(--muted);font-size:.85rem;padding:0 14px 24px}
+@media(max-width:540px){.grid{grid-template-columns:1fr}.results{grid-template-columns:1fr 1fr}.card{padding:14px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div><strong>MKULIMA™</strong> · AVENQOR HOLDINGS LTD</div><h1>Farm Business Calculator</h1><p class="hero-note">Estimate income, costs, profit and break-even prices in Kenya shillings. Works in your phone browser without an account.</p></div></header>
+<main><a class="back" href="/">← Back to MKULIMA dashboard</a>
+<section class="card"><h2>Choose what you are calculating</h2><div class="field"><label for="kind">Farm activity</label><select id="kind"><option value="crop">Crop harvest / produce sales</option><option value="milk">Dairy milk sales (per day)</option><option value="eggs">Egg sales (per day)</option><option value="livestock">Livestock sales (per batch)</option><option value="other">Other farm product</option></select></div><p class="muted">Use the same time period for quantity, sales and costs (for example, one harvest, one day, or one production cycle).</p></section>
+<section class="card"><h2>Sales estimate</h2><div class="grid">
+<div class="field"><label for="quantity">Quantity sold / produced</label><input id="quantity" type="number" min="0" step="any" value="100" inputmode="decimal" required><small>e.g. kg, litres, trays or animals</small></div>
+<div class="field"><label for="price">Selling price per unit (KSh)</label><input id="price" type="number" min="0" step="any" value="50" inputmode="decimal" required></div>
+<div class="field"><label for="sold">Share actually sold (%)</label><input id="sold" type="number" min="0" max="100" step="1" value="100" inputmode="numeric" required><small>Accounts for unsold or home-consumed produce</small></div>
+<div class="field"><label for="otherIncome">Other income (KSh)</label><input id="otherIncome" type="number" min="0" step="any" value="0" inputmode="decimal" required></div>
+</div></section>
+<section class="card"><h2>Costs for the same period</h2><p class="muted">Enter your own figures. Leave a cost at zero only if it does not apply.</p><div class="grid">
+<div class="field"><label for="inputs">Seeds, chicks, stock or feed (KSh)</label><input id="inputs" type="number" min="0" step="any" value="1500" inputmode="decimal"></div>
+<div class="field"><label for="labour">Labour (KSh)</label><input id="labour" type="number" min="0" step="any" value="500" inputmode="decimal"></div>
+<div class="field"><label for="vet">Vet, medicine or crop protection (KSh)</label><input id="vet" type="number" min="0" step="any" value="300" inputmode="decimal"></div>
+<div class="field"><label for="water">Water, fertiliser or electricity (KSh)</label><input id="water" type="number" min="0" step="any" value="400" inputmode="decimal"></div>
+<div class="field"><label for="transport">Transport, packaging and market fees (KSh)</label><input id="transport" type="number" min="0" step="any" value="300" inputmode="decimal"></div>
+<div class="field"><label for="otherCosts">Other costs (KSh)</label><input id="otherCosts" type="number" min="0" step="any" value="0" inputmode="decimal"></div>
+</div><div class="actions" style="margin-top:16px"><button id="calculate" type="button">Calculate results</button><button id="reset" class="secondary" type="button">Reset sample figures</button><button id="save" class="secondary" type="button">Save estimate on this phone</button></div><p id="status" class="muted" role="status" aria-live="polite">Estimates update when you calculate. Nothing is sent to a server.</p></section>
+<section class="card" aria-live="polite"><h2>Your estimate</h2><div class="results">
+<div class="metric"><span>Estimated sales revenue</span><strong id="revenue">KSh 5,000</strong></div>
+<div class="metric"><span>Total entered costs</span><strong id="costs">KSh 3,000</strong></div>
+<div class="metric"><span>Estimated balance</span><strong id="profit">KSh 2,000</strong></div>
+<div class="metric"><span>Break-even selling price</span><strong id="breakEven">KSh 30.00</strong></div>
+<div class="metric"><span>Margin on revenue</span><strong id="margin">40.0%</strong></div>
+<div class="metric"><span>Revenue per unit produced</span><strong id="perUnit">KSh 50.00</strong></div>
+</div><p id="interpretation" style="margin:13px 0 0">Based on the figures entered, the estimate is positive before any missing costs.</p></section>
+<div class="notice"><strong>Important:</strong> This is a planning estimate, not guaranteed profit. It excludes any costs you did not enter, including land rent, loan interest, equipment depreciation, losses, household withdrawals and your own labour if omitted. For animals, do not delay veterinary care to save money. Prices and yields vary by county and season; this tool is not connected to live market prices.</div>
+</main>
+<footer class="foot">MKULIMA™ · Created by AVENQOR HOLDINGS LTD · Estimates stay in this browser unless you export or share them.</footer>
+<script>
+const $=id=>document.getElementById(id);
+const ids=['quantity','price','sold','otherIncome','inputs','labour','vet','water','transport','otherCosts'];
+const defaults={quantity:100,price:50,sold:100,otherIncome:0,inputs:1500,labour:500,vet:300,water:400,transport:300,otherCosts:0};
+const money=n=>'KSh '+Number(n).toLocaleString('en-KE',{minimumFractionDigits:2,maximumFractionDigits:2});
+function val(id){const n=Number($(id).value);return Number.isFinite(n)&&n>=0?n:0}
+function calculate(){
+ const q=val('quantity'),p=val('price'),share=Math.min(100,val('sold'))/100,otherIncome=val('otherIncome');
+ const revenue=q*share*p+otherIncome,costs=['inputs','labour','vet','water','transport','otherCosts'].reduce((sum,id)=>sum+val(id),0),balance=revenue-costs;
+ const be=q*share>0?Math.max(0,(costs-otherIncome)/(q*share)):null,margin=revenue>0?balance/revenue*100:null,perUnit=q>0?revenue/q:null;
+ $('revenue').textContent=money(revenue);$('costs').textContent=money(costs);$('profit').textContent=money(balance);
+ $('breakEven').textContent=be===null?'N/A':money(be);$('margin').textContent=margin===null?'N/A':margin.toFixed(1)+'%';$('perUnit').textContent=perUnit===null?'N/A':money(perUnit);
+ $('profit').parentElement.classList.toggle('negative',balance<0);
+ $('interpretation').textContent=balance>0?'Your entered sales exceed your entered costs by '+money(balance)+'. Check whether any costs are missing.':balance<0?'Your entered costs exceed estimated sales by '+money(Math.abs(balance))+'. Review prices, yield, costs and potential ways to reduce losses.':'Your entered sales equal your entered costs. Any missing cost would make the result negative.';
+ $('status').textContent='Calculated locally on this phone. This is an estimate, not guaranteed profit.';
+ return {activity:$('kind').value,inputs:Object.fromEntries(ids.map(id=>[id,$(id).value])),revenue,costs,balance,breakEven:be,margin,calculatedAt:new Date().toISOString()};
+}
+$('calculate').addEventListener('click',calculate);
+$('reset').addEventListener('click',()=>{ids.forEach(id=>$(id).value=defaults[id]);$('kind').value='crop';calculate();$('status').textContent='Sample figures restored.'});
+$('save').addEventListener('click',()=>{const result=calculate();try{localStorage.setItem('mkulima_business_estimate',JSON.stringify(result));$('status').textContent='Estimate saved in this browser on this phone. It is not uploaded or synced.'}catch(e){$('status').textContent='Could not save locally. Check available phone storage.'}});
+$('kind').addEventListener('change',()=>{const k=$('kind').value;if(k==='milk'){$('quantity').value=20;$('price').value=55}else if(k==='eggs'){$('quantity').value=10;$('price').value=450}else if(k==='livestock'){$('quantity').value=1;$('price').value=25000}else{$('quantity').value=100;$('price').value=50}calculate()});
+ids.forEach(id=>$(id).addEventListener('input',()=>{if(id==='sold'&&val(id)>100)$('sold').value=100}));
+calculate();
+</script>
+</body></html>

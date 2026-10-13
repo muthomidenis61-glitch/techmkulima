@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#123c2f">
+<meta name="description" content="MKULIMA by AVENQOR HOLDINGS LTD — veterinary visit preparation and examination record for Kenyan farms.">
+<title>Veterinary Examination Record | MKULIMA</title>
+<style>
+:root{--green:#123c2f;--green2:#1e6248;--lime:#c9e86b;--cream:#f7f7f0;--ink:#1c2b25;--muted:#68766f;--line:#e2e9e3;--red:#a12e26;--amber:#815417}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}header{background:var(--green);color:#fff;padding:20px max(16px,calc((100% - 920px)/2));}header a{color:var(--lime)}header h1{font-size:clamp(25px,5vw,36px);line-height:1.1;margin:10px 0}header p{margin:6px 0;color:#e0ebe3}.brand{font-weight:900;letter-spacing:1px}.wrap{max-width:920px;margin:auto;padding:18px 14px 40px}.notice{padding:14px;border-radius:12px;background:#fff5df;border:1px solid #efd7a3;color:#684a1c;margin-bottom:14px}.notice.danger{background:#fff0ee;border-color:#e7bcb7;color:#7b2924}.card{background:white;border:1px solid var(--line);border-radius:16px;padding:17px;margin:14px 0}.card h2{font-size:20px;margin:0 0 12px}.sub{color:var(--muted);font-size:13px;margin-top:-7px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field{display:grid;gap:6px;min-width:0}.field label,.label{font-size:13px;font-weight:800}.field input,.field select,.field textarea{width:100%;min-width:0;padding:12px;border:1px solid #cfdcd1;border-radius:10px;background:white;color:var(--ink);font:inherit}.field textarea{min-height:88px;resize:vertical}.full{grid-column:1/-1}.checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:8px}.check{display:flex;align-items:flex-start;gap:9px;padding:10px;border:1px solid var(--line);border-radius:10px;font-size:14px}.check input{width:19px;height:19px;flex:0 0 19px;margin:1px 0 0;accent-color:var(--green)}.actions{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}.btn{border:0;border-radius:10px;padding:12px 15px;font:inherit;font-weight:800;min-height:44px;cursor:pointer}.primary{background:var(--green);color:white}.secondary{background:#edf5ed;color:var(--green)}.dangerbtn{background:#fff0ee;color:var(--red);border:1px solid #e7bcb7}.small{font-size:12px;color:var(--muted)}#alertBox{display:none}#savedStatus{font-size:13px;color:var(--green2);font-weight:700}.footer{text-align:center;font-size:12px;color:var(--muted);padding:12px}.back{display:inline-block;margin:8px 0 0}.hidden{display:none!important}:focus-visible{outline:3px solid #d39b32;outline-offset:2px}@media(max-width:600px){.grid,.checks{grid-template-columns:1fr}.wrap{padding:12px}.card{padding:14px}header{padding:18px 16px}.btn{width:100%}}@media print{body{background:#fff;font-size:11pt}header{background:#fff!important;color:#000;padding:0;border-bottom:2px solid #333}header p{color:#333}.wrap{max-width:none;padding:0}.card{break-inside:avoid;border:1px solid #aaa;box-shadow:none;padding:10px;margin:10px 0}.actions,.back,.no-print{display:none!important}.field input,.field select,.field textarea{border:0;border-bottom:1px solid #999;padding:4px}.notice{background:#fff!important;color:#000!important;border:1px solid #777}.checks{grid-template-columns:repeat(2,minmax(0,1fr))}a{color:#000}}
+</style>
+</head>
+<body>
+<header><div class="brand">MKULIMA™ · AVENQOR HOLDINGS LTD</div><a class="back" href="/">← Back to MKULIMA farm dashboard</a><h1>Veterinary visit & examination record</h1><p>Prepare a clear case history for a qualified veterinary professional. Designed for Kenyan farms.</p></header>
+<main class="wrap">
+<div class="notice danger"><strong>This is a record and triage aid, not a diagnosis or treatment service.</strong> If an animal is struggling to breathe, cannot stand, has severe bleeding or seizures, has suspected poisoning, severe bloat, prolonged difficult birth, or several animals die suddenly, contact a veterinarian or the relevant county veterinary office immediately. Do not delay care to complete this form. Do not give human medicines or guess medicine doses.</div>
+<div id="alertBox" class="notice danger" role="alert"></div>
+<form id="caseForm">
+<section class="card"><h2>1. Farmer and case details</h2><div class="grid">
+<div class="field"><label for="farmer">Farmer / contact name</label><input id="farmer" autocomplete="name"></div>
+<div class="field"><label for="phone">Phone number (optional)</label><input id="phone" type="tel" autocomplete="tel"></div>
+<div class="field"><label for="county">County</label><input id="county" placeholder="e.g. Meru"></div>
+<div class="field"><label for="area">Sub-county / ward / village</label><input id="area"></div>
+<div class="field"><label for="caseDate">Date and time noted</label><input id="caseDate" type="datetime-local"></div>
+<div class="field"><label for="visitType">Record type</label><select id="visitType"><option>Owner history before vet visit</option><option>Veterinary examination in progress</option><option>Follow-up visit</option></select></div>
+</div></section>
+<section class="card"><h2>2. Animal / group details</h2><div class="grid">
+<div class="field"><label for="species">Species</label><select id="species" required><option value="">Choose species</option><option>Cattle — dairy</option><option>Cattle — beef</option><option>Calf</option><option>Goat</option><option>Sheep</option><option>Pig</option><option>Chicken / poultry</option><option>Duck / other poultry</option><option>Dog</option><option>Cat</option><option>Rabbit</option><option>Other</option></select></div>
+<div class="field"><label for="animalId">Animal ID / name / tag</label><input id="animalId" placeholder="Or flock/herd pen ID"></div>
+<div class="field"><label for="count">Number affected</label><input id="count" type="number" min="1" value="1"></div>
+<div class="field"><label for="age">Age / age group</label><input id="age" placeholder="e.g. 3-month calf"></div>
+<div class="field"><label for="sex">Sex / production stage</label><select id="sex"><option>Not recorded</option><option>Female</option><option>Male</option><option>Pregnant</option><option>Lactating</option><option>Recently calved / kidded / farrowed</option><option>Young / growing</option></select></div>
+<div class="field"><label for="purpose">Main purpose</label><select id="purpose"><option>Not recorded</option><option>Milk</option><option>Meat</option><option>Eggs</option><option>Breeding</option><option>Companion</option><option>Other</option></select></div>
+</div></section>
+<section class="card"><h2>3. Emergency warning signs</h2><p class="sub">Select any sign present. This only flags urgency; it does not identify a disease.</p><div class="checks">
+<label class="check"><input type="checkbox" name="redflag" value="Difficulty breathing">Difficulty breathing / gasping</label>
+<label class="check"><input type="checkbox" name="redflag" value="Unable to stand or collapse">Unable to stand / collapse</label>
+<label class="check"><input type="checkbox" name="redflag" value="Seizures or severe weakness">Seizures / severe weakness</label>
+<label class="check"><input type="checkbox" name="redflag" value="Severe bleeding or major injury">Severe bleeding / major injury</label>
+<label class="check"><input type="checkbox" name="redflag" value="Severe bloat">Severe belly swelling / suspected bloat</label>
+<label class="check"><input type="checkbox" name="redflag" value="Suspected poison">Suspected poison / chemical exposure</label>
+<label class="check"><input type="checkbox" name="redflag" value="Difficult birth">Difficult birth / stuck young</label>
+<label class="check"><input type="checkbox" name="redflag" value="Sudden deaths or many sick animals">Sudden death(s) / many animals sick</label>
+<label class="check"><input type="checkbox" name="redflag" value="Cannot urinate">Unable to urinate / straining</label>
+<label class="check"><input type="checkbox" name="redflag" value="Rapid deterioration">Rapid deterioration / unresponsive</label>
+</div><div id="urgentMessage" class="notice danger hidden" role="status"><strong>Urgent veterinary attention recommended.</strong> Call a qualified veterinarian or county veterinary office now. Keep people and other animals safe; avoid handling bodily fluids, suspected poison or carcasses without professional guidance. If sudden deaths or multiple animals are affected, restrict movement and seek official veterinary advice.</div></section>
+<section class="card"><h2>4. Owner-observed symptoms and timeline</h2><div class="checks">
+<label class="check"><input type="checkbox" name="symptom" value="Not eating / reduced appetite">Not eating / reduced appetite</label>
+<label class="check"><input type="checkbox" name="symptom" value="Reduced water intake">Reduced water intake</label>
+<label class="check"><input type="checkbox" name="symptom" value="Fever suspected">Fever suspected / feels hot</label>
+<label class="check"><input type="checkbox" name="symptom" value="Cough / nasal discharge">Cough / nasal discharge</label>
+<label class="check"><input type="checkbox" name="symptom" value="Diarrhoea / abnormal droppings">Diarrhoea / abnormal droppings</label>
+<label class="check"><input type="checkbox" name="symptom" value="Vomiting or regurgitation">Vomiting / regurgitation</label>
+<label class="check"><input type="checkbox" name="symptom" value="Lameness / swollen joint">Lameness / swollen joint</label>
+<label class="check"><input type="checkbox" name="symptom" value="Skin lesions / itching / ticks">Skin lesions / itching / ticks</label>
+<label class="check"><input type="checkbox" name="symptom" value="Milk drop / udder changes">Milk drop / udder changes</label>
+<label class="check"><input type="checkbox" name="symptom" value="Egg production drop">Egg production drop</label>
+<label class="check"><input type="checkbox" name="symptom" value="Neurological signs">Unusual behaviour / neurological signs</label>
+<label class="check"><input type="checkbox" name="symptom" value="Reproductive problem">Reproductive problem / discharge</label>
+<label class="check"><input type="checkbox" name="symptom" value="Pale or yellow membranes">Pale / yellow eyes or gums</label>
+<label class="check"><input type="checkbox" name="symptom" value="Other symptom">Other / not listed</label>
+</div><div class="grid" style="margin-top:14px">
+<div class="field"><label for="onset">When did it start?</label><input id="onset" placeholder="Date/time or how many days ago"></div>
+<div class="field"><label for="course">Change over time</label><select id="course"><option>Not sure</option><option>Improving</option><option>Unchanged</option><option>Getting worse</option><option>Comes and goes</option></select></div>
+<div class="field full"><label for="description">Describe what you saw (include sequence)</label><textarea id="description" placeholder="What changed first? Any discharge, stool changes, pain, milk/egg changes?"></textarea></div>
+<div class="field"><label for="feed">Recent feed / pasture changes</label><textarea id="feed"></textarea></div>
+<div class="field"><label for="water">Water source / changes</label><textarea id="water"></textarea></div>
+<div class="field"><label for="exposure">New animals, travel, chemicals, plants or sick contacts</label><textarea id="exposure"></textarea></div>
+<div class="field"><label for="prevention">Vaccination / deworming / parasite control (dates if known)</label><textarea id="prevention"></textarea></div>
+<div class="field"><label for="treatment">Any medicines or remedies already given (name, amount, time)</label><textarea id="treatment"></textarea></div>
+<div class="field"><label for="production">Production changes (milk, eggs, growth, fertility)</label><textarea id="production"></textarea></div>
+</div></section>
+<section class="card"><h2>5. Veterinary examination — for the clinician</h2><p class="sub">Leave blank until a qualified veterinary professional examines the animal. Do not estimate clinical measurements.</p><div class="grid">
+<div class="field"><label for="vetName">Veterinarian / animal health professional</label><input id="vetName"></div>
+<div class="field"><label for="registration">Registration / practice details (if applicable)</label><input id="registration"></div>
+<div class="field"><label for="temp">Temperature and unit</label><input id="temp" placeholder="Clinician measurement"></div>
+<div class="field"><label for="pulse">Pulse / heart rate and unit</label><input id="pulse"></div>
+<div class="field"><label for="resp">Respiratory rate and unit</label><input id="resp"></div>
+<div class="field"><label for="hydration">Hydration / mucous membranes</label><input id="hydration"></div>
+<div class="field full"><label for="exam">Examination findings (general condition, systems examined, abnormal findings)</label><textarea id="exam"></textarea></div>
+<div class="field"><label for="tests">Tests / samples collected and results</label><textarea id="tests"></textarea></div>
+<div class="field"><label for="differentials">Clinician's differential diagnoses</label><textarea id="differentials"></textarea></div>
+<div class="field full"><label for="diagnosis">Diagnosis (clinician only)</label><textarea id="diagnosis"></textarea></div>
+<div class="field"><label for="plan">Treatment / procedure plan prescribed by clinician</label><textarea id="plan"></textarea></div>
+<div class="field"><label for="withdrawal">Milk / meat withdrawal guidance, if relevant</label><textarea id="withdrawal"></textarea></div>
+<div class="field"><label for="review">Follow-up date and return precautions</label><input id="review" type="date"></div>
+<div class="field"><label for="referral">Referral / report to county veterinary office</label><textarea id="referral"></textarea></div>
+</div></section>
+<div class="notice"><strong>Privacy:</strong> this page saves records only in this browser on this device when you choose Save. It does not send them to a veterinarian, cloud account or MKULIMA server. Do not store another person's sensitive details without permission. Export or print a copy to share directly with your veterinarian.</div>
+<div class="actions no-print"><button class="btn primary" type="button" id="saveBtn">Save case on this device</button><button class="btn secondary" type="button" id="loadBtn">Load saved case</button><button class="btn secondary" type="button" id="exportBtn">Export case as JSON</button><button class="btn secondary" type="button" id="printBtn">Print / save PDF</button><button class="btn dangerbtn" type="button" id="clearBtn">Clear form</button></div>
+<div id="savedStatus" role="status" aria-live="polite"></div>
+<p class="small">MKULIMA™ by AVENQOR HOLDINGS LTD · Veterinary examination workspace · Educational and record-keeping aid only.</p>
+</form>
+</main>
+<script>
+(function(){
+const form=document.getElementById('caseForm'), urgent=document.getElementById('urgentMessage'), alertBox=document.getElementById('alertBox'), status=document.getElementById('savedStatus');
+const fields=[...form.querySelectorAll('input,select,textarea')];
+function data(){const out={product:'MKULIMA Veterinary Examination Record',schemaVersion:1,exportedAt:new Date().toISOString(),fields:{},redFlags:[],symptoms:[]};fields.forEach(el=>{if(!el.id)return;if(el.type==='checkbox')return;out.fields[el.id]=el.value;});out.redFlags=[...form.querySelectorAll('input[name="redflag"]:checked')].map(x=>x.value);out.symptoms=[...form.querySelectorAll('input[name="symptom"]:checked')].map(x=>x.value);return out;}
+function apply(d){if(!d||!d.fields)throw new Error('This file is not a recognised MKULIMA case record.');fields.forEach(el=>{if(el.id&&Object.prototype.hasOwnProperty.call(d.fields,el.id)&&el.type!=='checkbox')el.value=d.fields[el.id]??'';});['redflag','symptom'].forEach(name=>{const values=d[name==='redflag'?'redFlags':'symptoms']||[];form.querySelectorAll('input[name="'+name+'"]').forEach(el=>el.checked=values.includes(el.value));});updateUrgency();status.textContent='Case loaded into the form.';}
+function updateUrgency(){const active=form.querySelectorAll('input[name="redflag"]:checked').length>0;urgent.classList.toggle('hidden',!active);alertBox.style.display=active?'block':'none';alertBox.textContent=active?'EMERGENCY WARNING SIGNS SELECTED: seek urgent veterinary help now. Do not wait for app advice.':' ';if(active)urgent.scrollIntoView({behavior:'auto',block:'nearest'});}
+form.querySelectorAll('input[name="redflag"]').forEach(el=>el.addEventListener('change',updateUrgency));
+document.getElementById('caseDate').value=new Date(Date.now()-new Date().getTimezoneOffset()*60000).toISOString().slice(0,16);
+document.getElementById('saveBtn').addEventListener('click',()=>{try{localStorage.setItem('mkulimaVetCaseV1',JSON.stringify(data()));status.textContent='Saved on this device only. It has not been sent to a veterinarian.';}catch(e){status.textContent='Could not save on this device. Use Export case as JSON or Print / save PDF.';}});
+document.getElementById('loadBtn').addEventListener('click',()=>{try{const raw=localStorage.getItem('mkulimaVetCaseV1');if(!raw){status.textContent='No saved case found in this browser on this device.';return;}apply(JSON.parse(raw));}catch(e){status.textContent='Could not load saved case. Exported files may still be available in your Downloads.';}});
+document.getElementById('exportBtn').addEventListener('click',()=>{try{const blob=new Blob([JSON.stringify(data(),null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='mkulima-veterinary-case-'+new Date().toISOString().slice(0,10)+'.json';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);status.textContent='Case exported to your device. Share it directly with your veterinarian if needed.';}catch(e){status.textContent='Export failed. Try Print / save PDF.';}});
+document.getElementById('printBtn').addEventListener('click',()=>window.print());
+document.getElementById('clearBtn').addEventListener('click',()=>{if(!confirm('Clear all fields in this form? This does not delete the saved case.'))return;form.reset();document.getElementById('caseDate').value=new Date(Date.now()-new Date().getTimezoneOffset()*60000).toISOString().slice(0,16);updateUrgency();status.textContent='Form cleared. The previously saved case was not deleted.';});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "id": "/",
+  "name": "MKULIMA — Smart Farming by Avenqor Holdings Ltd",
+  "short_name": "MKULIMA",
+  "description": "Kenya-focused farming support for crops, livestock, farm records and practical farm decisions.",
+  "lang": "en-KE",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f7f7f0",
+  "theme_color": "#123c2f",
+  "categories": ["agriculture", "education", "utilities"],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/mkulima-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

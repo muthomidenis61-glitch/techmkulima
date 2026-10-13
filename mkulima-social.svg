@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">MKULIMA — Smart Farming for Kenya</title><desc id="desc">Kenya-focused crop and livestock tools by Avenqor Holdings Ltd.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#103b2c"/><stop offset="1" stop-color="#28734b"/></linearGradient><pattern id="lines" width="52" height="52" patternUnits="userSpaceOnUse"><path d="M0 52L52 0" stroke="#ffffff" stroke-opacity=".05" stroke-width="2"/></pattern></defs>
+<rect width="1200" height="630" fill="url(#bg)"/><rect width="1200" height="630" fill="url(#lines)"/>
+<circle cx="1020" cy="130" r="210" fill="#c9e86b" opacity=".08"/><circle cx="1080" cy="520" r="280" fill="#c9e86b" opacity=".08"/>
+<rect x="78" y="78" width="86" height="86" rx="25" fill="#c9e86b"/><text x="121" y="137" font-family="Arial,sans-serif" font-size="38" font-weight="900" text-anchor="middle" fill="#123c2f">MK</text>
+<text x="190" y="111" font-family="Arial,sans-serif" font-size="25" font-weight="700" letter-spacing="5" fill="#ffffff">MKULIMA</text><text x="190" y="145" font-family="Arial,sans-serif" font-size="17" letter-spacing="2" fill="#dcebdc">SMART FARMING FOR KENYA</text>
+<text x="80" y="285" font-family="Arial,sans-serif" font-size="56" font-weight="800" fill="#ffffff">Grow smarter.</text><text x="80" y="353" font-family="Arial,sans-serif" font-size="56" font-weight="800" fill="#c9e86b">Farm stronger.</text>
+<text x="82" y="411" font-family="Arial,sans-serif" font-size="23" fill="#e5efe7">Crop and livestock guidance • Farm planning • Records</text><text x="82" y="448" font-family="Arial,sans-serif" font-size="23" fill="#e5efe7">Practical tools for Kenya's farmers.</text>
+<path d="M850 445 C920 350 910 260 1015 200 C1000 290 1040 350 1100 390 C1035 435 965 460 850 445Z" fill="#c9e86b" opacity=".92"/><path d="M864 445 C925 372 966 302 1015 220" fill="none" stroke="#174a33" stroke-width="8" stroke-linecap="round"/><path d="M956 337L916 328M988 287L1020 300" stroke="#174a33" stroke-width="6" stroke-linecap="round"/>
+<text x="82" y="558" font-family="Arial,sans-serif" font-size="17" letter-spacing="1.5" fill="#c9e86b">CREATED BY AVENQOR HOLDINGS LTD</text><text x="82" y="592" font-family="Arial,sans-serif" font-size="18" fill="#ffffff">mkulim.netlify.app</text>
+</svg>
